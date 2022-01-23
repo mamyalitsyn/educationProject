@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.medium;
 
 import leetcode.model.ListNode;
 import org.junit.jupiter.api.BeforeEach;
