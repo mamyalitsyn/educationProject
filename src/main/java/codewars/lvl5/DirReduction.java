@@ -1,9 +1,11 @@
 package codewars.lvl5;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Directions Reduction
+ *
  * @see <a href="https://www.codewars.com/kata/550f22f4d758534c1100025a">Kata link</a>
  * Once upon a time, on a way through the old wild mountainous west,…
  */
@@ -14,9 +16,9 @@ public class DirReduction {
         }
         for (int i = 0; i < arr.length - 1; i++) {
             if (("NORTH".equals(arr[i]) && "SOUTH".equals(arr[i + 1])) ||
-                ("SOUTH".equals(arr[i]) && "NORTH".equals(arr[i + 1])) ||
-                ("EAST".equals(arr[i]) && "WEST".equals(arr[i + 1])) ||
-                ("WEST".equals(arr[i]) && "EAST".equals(arr[i + 1]))) {
+                    ("SOUTH".equals(arr[i]) && "NORTH".equals(arr[i + 1])) ||
+                    ("EAST".equals(arr[i]) && "WEST".equals(arr[i + 1])) ||
+                    ("WEST".equals(arr[i]) && "EAST".equals(arr[i + 1]))) {
                 arr[i] = null;
                 arr[i + 1] = null;
             }
