@@ -1,9 +1,6 @@
 package codewars.lvl5;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Directions Reduction
@@ -12,16 +9,35 @@ import java.util.Map;
  */
 public class DirReduction {
     public static String[] dirReduc(String[] arr) {
-        Map<String, String> pairs = new HashMap<>();
-        pairs.put("NORTH", "SOUTH");
-        pairs.put("SOUTH", "NORTH");
-        pairs.put("EAST", "WEST");
-        pairs.put("WEST", "EAST");
-        var list = new ArrayList<>(Arrays.asList(arr));
-        if (list.contains(pairs.get(list.get(0)))) {
-            list.remove(pairs.get(list.get(0)));
-            list.remove(0);
+        if (arr.length < 2) {
+            return arr;
         }
-        return list.toArray(new String[0]);
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (("NORTH".equals(arr[i]) && "SOUTH".equals(arr[i + 1])) ||
+                ("SOUTH".equals(arr[i]) && "NORTH".equals(arr[i + 1])) ||
+                ("EAST".equals(arr[i]) && "WEST".equals(arr[i + 1])) ||
+                ("WEST".equals(arr[i]) && "EAST".equals(arr[i + 1]))) {
+                arr[i] = null;
+                arr[i + 1] = null;
+            }
+        }
+        String[] newArr = Arrays.stream(arr)
+                .filter(Objects::nonNull)
+                .toArray(String[]::new);
+        if (newArr.length == arr.length) {
+            return arr;
+        } else {
+            return dirReduc(newArr);
+        }
+
+        /*List<String> dirs = new ArrayList<String>(Arrays.asList(arr));
+        for (int i = 0; i + 1 < dirs.size(); i++) {
+            if ("NORTHSOUTH,SOUTHNORTH,EASTWEST,WESTEAST".contains(dirs.get(i) + dirs.get(i + 1))) {
+                dirs.remove(i + 1);
+                dirs.remove(i);
+                i = -1;
+            }
+        }
+        return dirs.toArray(new String[dirs.size()]);*/
     }
 }
