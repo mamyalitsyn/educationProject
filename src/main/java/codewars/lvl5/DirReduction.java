@@ -7,6 +7,7 @@ import java.util.Objects;
  * Directions Reduction
  *
  * @see <a href="https://www.codewars.com/kata/550f22f4d758534c1100025a">Kata link</a>
+ * <p>
  * Once upon a time, on a way through the old wild mountainous west,…
  */
 public class DirReduction {

@@ -7,6 +7,7 @@ import java.util.Set;
  * Longest Substring Without Repeating Characters
  *
  * @see <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Problem link</a>
+ * <p>
  * Given a string s, find the length of the longest substring without repeating characters.
  */
 public class LongestSubstringWithoutRepeatingCharacters {
