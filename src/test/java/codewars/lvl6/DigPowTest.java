@@ -1,4 +1,4 @@
-package codewars.lvl5;
+package codewars.lvl6;
 
 import org.junit.jupiter.api.Test;
 
